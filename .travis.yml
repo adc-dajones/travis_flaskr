@@ -3,6 +3,14 @@ language: python
 python:
   - '2.6'
 
+env:
+  global:
+    - secure: SvBBSWaiZtJlntALDE6fjOKVqR5YGrXGS4mdPmXnxhQOKAGvtmOcEEGgHaoycrfM+mHZ0YQP7o68oXgpTJihH3MrJ8FA1FdSlVueRLiXJeGd8qhPkintG+m8LkKGskNlbzRERbw+qUh06jkMLxMbGn+tP8X2zjAWohNJJtiUDY2RG1RFxq5CkU6dLNFkG5Hy2+UEHlRaNjkIT8JOIyu3HWHYshUrq6RsBbl9YFCcfbGVXlR7fTTTP9190CPj63uu88U6v1f9Zfbru83GRE7nKzpRTX6L4f6kaDhi5Ww+7+i8CVtxe6HNlQEDM+xBZkYqbb8RCo/ieLeqnHuMpe0s4LtuLmHhpEzodVoggtjIhG6Az+c9uLP+CjCZ8dxJ7sOs7HWsZoeCGCn3Vw2dca3HQIRs5XSWQLt2x/CogXwiSt7d09FrlZ+DWExxW0Ri2JU3toTZq+TNIC3aQqxOugeopbfbWbs0T105rmhh8v4rOjqbKqMbR6JfBsj5Qup2VQftP61xf8WRyi3CvfS9kEBduf6ywIHYPV6HOIwAV52Ut7Mpy6B5RwR5Fc1f0zFbgm4Z1DeYbEarKyUqFSgjUNKP3S4U032Kobv2Ez9enpZhFu2FzTeo+K5GOzYU8pkDi8QNMvbAVcLImEIKNb9MIsKe2CcST/WqJLAgGShhadgTxoU=
+    - secure: J9r/REd9zpVM2Tw8rfGikdYkVoKpEGb1WeSKe4eKrdmOolkgiaGUjZtgyyeP0iUxh6hbEHr0KbDqnhz2H5BLGNOnus+hzAIaCoSnU7331PZYd+JaZWR/Cs7ORoEf2C+GhbIFnchUjt6isS1SVb38k9JwwRyI9stx471sjADOWATIHklv3Vf/XKzzGz1irj+rhycXPQD9tIeUhtLC4XzUzGUZbs8pcBFLOGXr4INA5TkMVvVIZz0tilb0JO6HZD4Qy2WA7/3qtayujc66rRFJyVsBNGim77BPUcsODYX8nC4ySTMxoXk5OKqU1kn8jGAQw/h0+7BEyu1DABJyYw5HSiblc0VnWAOvF/pfCAuQW+aMstSv4EWiPmI6ZlWQsj1MmNUtSwzNzeDSzZCYjixEgh9S7SQJ8T1wHTQLHNXwisFVeogZ0qecC5DxEVI1q3tDcNS9FEsbzs407+8L0qDdU0bDyRU9MEuwKkObPxch5kHJNRzRY7T5T6HtdetgWiIGu4TDWE7fbVeLTm13ivBE3OFmd2AiJWgj3FBxij9Uwu7fYCRBmkKnkA0M7YUsgPZnzONt64F6h/mNbfEbOPId8LBYP9wm3cbyJ8QFE7AqwKzX6G6eBc7pWMP99sJPBUy08b4gQa97bZv87yIe7E+Nkhnws8/vyTg3W7ndeCau8UA=
+
+addons:
+  sauce_connect: true
+
 before_script:
   - "export PYTHONPATH=$PYTHONPATH:$(pwd)"
   - "env |grep PYTHONPATH"
@@ -12,3 +20,4 @@ before_script:
 
 script:
   - "py.test test/test_flaskr.py"
+  - "py.test test/test_sauce.py"

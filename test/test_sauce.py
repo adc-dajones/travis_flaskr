@@ -39,6 +39,12 @@ class SauceSampleTest(unittest.TestCase):
     def setUp(self):
         self.desired_capabilities['name'] = self.id()
 
+        if os.environ.get('TRAVIS_BUILD_NUMBER'):
+            self.desired_capabilities[
+                'build'] = os.environ.get('TRAVIS_BUILD_NUMBER')
+            self.desired_capabilities[
+                'tunnel-identifier'] = os.environ.get('TRAVIS_JOB_NUMBER')
+
         sauce_url = "http://%s:%s@ondemand.saucelabs.com:80/wd/hub"
         self.driver = webdriver.Remote(
             desired_capabilities=self.desired_capabilities,
