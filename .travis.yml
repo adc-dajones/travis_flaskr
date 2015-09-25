@@ -5,10 +5,10 @@ python:
 
 before_script:
   - "export PYTHONPATH=$PYTHONPATH:$(pwd)"
+  - "env |grep PYTHONPATH"
   - "pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master"
   - "flask --app=flaskr initdb"
   - "flask --app=flaskr run &"
 
 script:
   - "py.test test/test_flaskr.py"
-  - "py.test test/test_pyorg.py"

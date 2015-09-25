@@ -13,7 +13,7 @@ import os
 import pytest
 import tempfile
 
-import test.flaskr as flaskr
+import flaskr
 
 
 @pytest.fixture
