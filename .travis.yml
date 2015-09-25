@@ -9,4 +9,5 @@ before_script:
   - "flask --app=flaskr run &"
 
 script:
-  - "py.test test_flaskr.py"
+  - "py.test test/test_flaskr.py"
+  - "py.test test/test_pyorg.py"
