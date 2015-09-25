@@ -11,4 +11,5 @@ cd ../..
 virtualenv venv --no-site-packages --python=`pwd`/py266/bin/python
 source venv/bin/activate
 sudo pip install -r requirements.txt
+sudo pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master
 alias venv='source venv/bin/activate'
