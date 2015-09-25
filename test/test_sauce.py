@@ -1,11 +1,13 @@
-import os
-import sys
-import httplib
 import base64
+import httplib
 import json
 import new
-import unittest
+import os
 import sauceclient
+import socket
+import sys
+import unittest
+
 from selenium import webdriver
 from sauceclient import SauceClient
 
@@ -40,10 +42,11 @@ class SauceSampleTest(unittest.TestCase):
         self.desired_capabilities['name'] = self.id()
 
         if os.environ.get('TRAVIS_BUILD_NUMBER'):
-            self.desired_capabilities[
-                'build'] = os.environ.get('TRAVIS_BUILD_NUMBER')
-            self.desired_capabilities[
-                'tunnel-identifier'] = os.environ.get('TRAVIS_JOB_NUMBER')
+            self.desired_capabilities['build'] = os.environ.get('TRAVIS_BUILD_NUMBER')
+            self.desired_capabilities['tunnel-identifier'] = os.environ.get('TRAVIS_JOB_NUMBER')
+            self.desired_capabilities['tags'] = ['host travisCI']
+        else:
+            self.desired_capabilities['tags'] = ['host %s' % socket.gethostname()]
 
         sauce_url = "http://%s:%s@ondemand.saucelabs.com:80/wd/hub"
         self.driver = webdriver.Remote(
