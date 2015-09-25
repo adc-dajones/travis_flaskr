@@ -6,11 +6,11 @@ sudo pip install virtualenv
 # tar -xvzf Python-2.6.6.tgz
 # cd Python-2.6.6
 
-mkdir py276
-cd py276
-wget https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
-tar -xvzf Python-2.7.6.tgz
-cd Python-2.7.6
+mkdir py279
+cd py279
+wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
+tar -xvzf Python-2.7.9.tgz
+cd Python-2.7.9
 
 ./configure --prefix=`pwd`/..
 make
@@ -18,7 +18,7 @@ make install
 cd ../..
 
 # virtualenv venv --no-site-packages --python=`pwd`/py266/bin/python
-virtualenv venv --no-site-packages --python=`pwd`/py276/bin/python
+virtualenv venv --no-site-packages --python=`pwd`/py279/bin/python
 
 source venv/bin/activate
 sudo pip install -r requirements.txt
