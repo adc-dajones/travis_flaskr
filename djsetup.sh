@@ -12,4 +12,7 @@ virtualenv venv --no-site-packages --python=`pwd`/py266/bin/python
 source venv/bin/activate
 sudo pip install -r requirements.txt
 sudo pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master
+flask --app=flaskr initdb
 alias venv='source venv/bin/activate'
+alias finit='flask --app=flaskr initdb'
+alias frun='flask --app=flaskr run'

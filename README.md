@@ -12,7 +12,8 @@ $> which python; python -V
 Python 2.6.6
 
 Run:
-$> python hello.py
-browser> http://localhost:5000
+$> frun
+browser> http://localhost:5000  # login with admin/admin
 ^C when done to kill the server.
+$> deactivate  # to get out of the virtualenv
 </pre>
