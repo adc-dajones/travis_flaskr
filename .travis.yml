@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - '2.6'
+
+before_script:
+  - "pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master"
+  - "flask --app=flaskr initdb"
+  - "flask --app=flaskr run &"
+
+script:
+  - "py.test test_flaskr.py"
