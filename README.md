@@ -16,4 +16,7 @@ $> frun
 browser> http://localhost:5000  # login with admin/admin
 ^C when done to kill the server.
 $> deactivate  # to get out of the virtualenv
+
+Tests:
+$> py.test test_flaskr.py
 </pre>
