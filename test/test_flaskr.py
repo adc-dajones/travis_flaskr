@@ -9,11 +9,11 @@
     :license: BSD, see LICENSE for more details.
 """
 
-import pytest
-
 import os
-import flaskr
+import pytest
 import tempfile
+
+import test.flaskr as flaskr
 
 
 @pytest.fixture
