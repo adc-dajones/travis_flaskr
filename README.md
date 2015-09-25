@@ -1,6 +1,6 @@
 # travis_flaskr
 <pre>
-TravisCI flaskr sample app
+TravisCI flaskr sample app.
 
 Setup:
 $> git clone https://github.com/adc-dajones/travis_flaskr
