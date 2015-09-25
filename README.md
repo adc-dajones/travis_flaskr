@@ -1,4 +1,5 @@
 # travis_flaskr
+<pre>
 TravisCI flaskr sample app
 
 Setup:
@@ -14,3 +15,4 @@ Run:
 $> python hello.py
 browser> http://localhost:5000
 ^C when done to kill the server.
+</pre>
