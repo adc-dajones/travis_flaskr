@@ -1,10 +1,15 @@
 language: python
 
 python:
-  - "2.7"
+    - "2.7"
 
 install: "pip install -r requirements.txt --use-mirrors"
 
 before_script:
-   - mkdir -p shippable/testresults
-   - mkdir -p shippable/codecoverage
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+
+script:
+    - py.test test/test_flaskr.py --junit-xml=shippable/testresults/nosetests.xml
+    - coverage run --branch test/test_flaskr.py
+    - coverage xml -o shippable/codecoverage/coverage.xml test/test_flaskr.py
