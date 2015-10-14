@@ -1,3 +1,0 @@
-alias venv='source venv/bin/activate'
-alias finit='flask --app=flaskr initdb'
-alias frun='flask --app=flaskr run'

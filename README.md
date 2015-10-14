@@ -5,8 +5,7 @@ TravisCI flaskr sample app.
 Setup:
 $> git clone https://github.com/adc-dajones/travis_flaskr
 $> cd travis_flaskr
-$> sh -x flaskr_setup.sh
-$> source aliases
+$> source flaskr_setup.sh
 $> venv
 
 Run:
@@ -16,7 +15,7 @@ browser> http://localhost:5000  # login with admin/admin
 
 Tests:
 $> py.test test/test_flaskr.py # unittests
-$> py.test test/test_sauce.py  # functional GUI tests.
+$> py.test test/test_sauce.py  # functional saucelabs selinum GUI tests.
 
 Reset DB:
 $> finit

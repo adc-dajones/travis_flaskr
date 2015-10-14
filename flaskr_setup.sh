@@ -1,4 +1,4 @@
-# When setup is complete it drop a file (.flaskr_setup_complete) to 
+# When setup is complete it drops a file (.flaskr_setup_complete) to 
 # tell setup not to run again. If you wish to run it again simply delete
 # the file.
 
@@ -22,4 +22,6 @@ if [ ! -f ./.flaskr_setup_complete ]; then
     source venv/bin/activate
     flask --app=flaskr initdb
 fi
-source ./aliases
+alias venv='source venv/bin/activate'
+alias finit='flask --app=flaskr initdb'
+alias frun='flask --app=flaskr run'
