@@ -21,6 +21,10 @@ if [ ! -f ./.flaskr_setup_complete ]; then
     date > .flaskr_setup_complete
     source venv/bin/activate
     flask --app=flaskr initdb
+
+    # To support Shippable
+    mkdir -p shippable/testresults
+    mkdir -p shippable/codecoverage
 fi
 alias venv='source venv/bin/activate'
 alias finit='flask --app=flaskr initdb'

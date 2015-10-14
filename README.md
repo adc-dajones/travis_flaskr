@@ -15,7 +15,13 @@ browser> http://localhost:5000  # login with admin/admin
 
 Tests:
 $> py.test test/test_flaskr.py # unittests
-$> py.test test/test_sauce.py  # functional saucelabs selinum GUI tests.
+$> py.test test/test_sauce.py  # functional selinum GUI tests.
+
+Code coverage:
+$> coverage run --branch test/test_flaskr.py
+$> coverage html
+$> python -m SimpleHTTPServer 9999
+browser> http://localhost:9999/htmlcov/
 
 Reset DB:
 $> finit
