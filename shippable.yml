@@ -9,9 +9,13 @@ before_script:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - export PYTHONPATH="$PYTHONPATH:$SMT_INSTALL_DIR"
-    - sudo pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master
+    - pip install --upgrade https://github.com/mitsuhiko/flask/tarball/master
 
 script:
     - py.test test/test_flaskr.py --junit-xml=shippable/testresults/nosetests.xml
     - coverage run --branch test/test_flaskr.py
     - coverage xml -o shippable/codecoverage/coverage.xml test/test_flaskr.py
+
+notifications:
+    email:
+        - dajones@auction.com
