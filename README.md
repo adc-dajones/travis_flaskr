@@ -5,11 +5,9 @@ TravisCI flaskr sample app.
 Setup:
 $> git clone https://github.com/adc-dajones/travis_flaskr
 $> cd travis_flaskr
-$> sh -x djsetup.sh
+$> sh -x flaskr_setup.sh
+$> source aliases
 $> venv
-$> which python; python -V
-/[your_base_dir]/travis_flaskr/venv/bin/python
-Python 2.7.9
 
 Run:
 $> frun
@@ -19,6 +17,9 @@ browser> http://localhost:5000  # login with admin/admin
 Tests:
 $> py.test test/test_flaskr.py # unittests
 $> py.test test/test_sauce.py  # functional GUI tests.
+
+Reset DB:
+$> finit
 
 When Done:
 $> deactivate  # to get out of the virtualenv
