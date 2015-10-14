@@ -8,6 +8,8 @@ install: "pip install -r requirements.txt --use-mirrors"
 before_script:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
+    - echo "$SMT_INSTALL_DIR"
+    - export PYTHONPATH="$PYTHONPATH:$SMT_INSTALL_DIR"
 
 script:
     - py.test test/test_flaskr.py --junit-xml=shippable/testresults/nosetests.xml
