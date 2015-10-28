@@ -21,3 +21,8 @@ before_script:
 script:
   - "py.test test/test_flaskr.py"
   - "py.test test/test_sauce.py"
+
+notifications:
+  slack:
+    rooms:
+      - auctiontech:pirlF59RH2xECvVTFm1wrGz6#fe-cicd
